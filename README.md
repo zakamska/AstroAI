@@ -1,8 +1,6 @@
 # Using AstroAI with Cursor: A Recommended Work Process
 
-This repository provides minimal infrastructure for using [Cursor](https://cursor.com) in a scientifically productive way. The files under [`.cursor/`](../.cursor/) define **rules** (always-on constraints for the agent) and **commands** (repeatable workflows you invoke with `/command-name`). Together they shape how the agent behaves in your project.
-
-> **GitHub links:** This file lives in `docs/`, so rule and command links use `../.cursor/...` (one directory up to the repo root). If you paste this guide into the **repository root `README.md`**, those links will break — either keep the guide here and use a short root README that points to `docs/instructions.md`, or replace every `../.cursor/` with `.cursor/` in the README copy.
+This repository provides minimal infrastructure for using [Cursor](https://cursor.com) in a scientifically productive way. The files under [`.cursor/`](./.cursor/) define **rules** (always-on constraints for the agent) and **commands** (repeatable workflows you invoke with `/command-name`). Together they shape how the agent behaves in your project.
 
 The sections below explain how to get started, how I work day to day, and how the setup addresses common concerns about safety, privacy, and trust.
 
@@ -34,8 +32,8 @@ Before adopting an AI coding agent for research, I cared about several things:
 No setup eliminates these risks entirely. The rules and commands in `.cursor/` address many of them **in part or in full**, especially when combined with a conservative workflow:
 
 - **Workspace confinement** — All agent activity stays inside the project directory you open as the workspace (no edits under your home folder, `/tmp`, etc.).
-- **Directory layout ([NORMS](../.cursor/rules/NORMS.md))** — User-provided material lives in `data/`, `src/`, and `docs/`; the agent’s code and generated results go in `scripts/` and `output/`, with clear rules about not overwriting your files without permission.
-- **Agent contract ([AI-AGENT-CONTRACT](../.cursor/rules/AI-AGENT-CONTRACT.md))** — Handoffs, evidence, and artifact state (what is authoritative vs in progress).
+- **Directory layout ([NORMS](./.cursor/rules/NORMS.md))** — User-provided material lives in `data/`, `src/`, and `docs/`; the agent’s code and generated results go in `scripts/` and `output/`, with clear rules about not overwriting your files without permission.
+- **Agent contract ([AI-AGENT-CONTRACT](./.cursor/rules/AI-AGENT-CONTRACT.md))** — Handoffs, evidence, and artifact state (what is authoritative vs in progress).
 - **Notebook discipline** — Agent runs and verifies notebooks before calling work “done”; version numbers increase sequentially for each step so you can trace what produced what.
 
 **Trust is earned, not assumed.** Treat the agent as a fast assistant that must show its work: cite files it read, run code when possible, and record results in the project (not only in chat). Your `project_description.txt` (below) and versioned outputs are part of that audit trail.
@@ -70,7 +68,7 @@ Copy the entire `.cursor` directory from this repository into `new_project/`:
 
 (Include `rules/` and `commands/` and their files.)
 
-Optionally create the standard project folders described in [NORMS](../.cursor/rules/NORMS.md) — they can also be created on first use:
+Optionally create the standard project folders described in [NORMS](./.cursor/rules/NORMS.md) — they can also be created on first use:
 
 - `downloads/`, `data/`, `src/`, `docs/` — your inputs and documentation  
 - `scripts/`, `output/` — agent-editable code and generated results  
@@ -141,7 +139,7 @@ Refine `project_description.txt`, adjust plans, and only move to implementation 
 
 ## Versioned notebooks and outputs
 
-Rules in [notebook-version-naming](../.cursor/rules/notebook-version-naming.mdc) require new notebooks in `scripts/` to be named with a three-digit prefix, e.g.:
+Rules in [notebook-version-naming](./.cursor/rules/notebook-version-naming.mdc) require new notebooks in `scripts/` to be named with a three-digit prefix, e.g.:
 
 - `v000_exploratory_plots.ipynb`  
 - `v001_catalog_crossmatch.ipynb`  
@@ -165,13 +163,13 @@ I keep Cursor in **Plan** mode about **95%** of the time. I switch to **Agent** 
 
 **How to switch:** In the prompt area, click the small control on the left (often shown as a mode selector or “+”) and choose **Plan** or **Agent**. The default is usually **Agent**.
 
-For notebook work, [notebook-build-verify](../.cursor/rules/notebook-build-verify.mdc) rule says that the agent is supposed to do a full execute-and-verify cycle once you are in Agent mode and have approved the plan. However, sometimes this fails and you need to remind the agent of the rule. 
+For notebook work, [notebook-build-verify](./.cursor/rules/notebook-build-verify.mdc) rule says that the agent is supposed to do a full execute-and-verify cycle once you are in Agent mode and have approved the plan. However, sometimes this fails and you need to remind the agent of the rule. 
 
 ---
 
 ## Handoffs when context runs long
 
-Long sessions fill the context window. Before starting fresh (or when you want a clean checkpoint), use the **`/create-handoff`** command (defined in [`.cursor/commands/create-handoff.md`](../.cursor/commands/create-handoff.md)).
+Long sessions fill the context window. Before starting fresh (or when you want a clean checkpoint), use the **`/create-handoff`** command (defined in [`.cursor/commands/create-handoff.md`](./.cursor/commands/create-handoff.md)).
 
 That command instructs the agent to write a structured report under `docs/`, typically:
 
