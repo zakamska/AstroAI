@@ -2,6 +2,8 @@
 
 This repository provides minimal infrastructure for using [Cursor](https://cursor.com) in a scientifically productive way. The files under [`.cursor/`](../.cursor/) define **rules** (always-on constraints for the agent) and **commands** (repeatable workflows you invoke with `/command-name`). Together they shape how the agent behaves in your project.
 
+> **GitHub links:** This file lives in `docs/`, so rule and command links use `../.cursor/...` (one directory up to the repo root). If you paste this guide into the **repository root `README.md`**, those links will break — either keep the guide here and use a short root README that points to `docs/instructions.md`, or replace every `../.cursor/` with `.cursor/` in the README copy.
+
 The sections below explain how to get started, how I work day to day, and how the setup addresses common concerns about safety, privacy, and trust.
 
 ---
