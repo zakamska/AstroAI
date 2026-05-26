@@ -1,0 +1,31 @@
+---
+description: Versioned naming for new notebooks and outputs in scripts/ and output/
+alwaysApply: true
+---
+
+# Notebook version naming (scripts/ and output/ only)
+
+This rule applies **only** to files created by the agent in **`scripts/`** and **`output/`**.
+
+## Notebooks in scripts/
+
+When creating a **new** Jupyter notebook in `scripts/`:
+- Name it `vNNN_descriptive_name.ipynb`, with `NNN` a **three-digit** version number (e.g. `v000`, `v001`).
+- The rest of the name can be descriptive. Each new notebook uses the next consecutive version number.
+
+## Outputs in output/
+
+When a notebook in `scripts/` writes files (plots, tables, summaries, FITS, ECSV, etc.) to `output/`:
+- Those output files must start with the **same** `vNNN_` prefix as the notebook (e.g. notebook `v000_foo.ipynb` → outputs `v000_summary.md`, `v000_candidates.fits`).
+- This makes it easy to see which outputs were produced by which notebook.
+
+## This project
+
+- Version numbering starts at **v000** for this project.
+- The **next version to use** when creating a new notebook in `scripts/` is **v000**.
+- After creating a notebook (e.g. `v000`), update this rule so the stated "next version" is **v001** (and so on).
+
+## Scope
+
+- Applies only to **new** notebooks created in `scripts/` and the **new** output files they write to `output/`.
+- Does not apply to files in `src/`, `data/`, or elsewhere, or to existing files.

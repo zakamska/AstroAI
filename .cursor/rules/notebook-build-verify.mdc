@@ -1,0 +1,29 @@
+---
+description: When a plan includes building a notebook, run and debug it until it runs and produces outputs
+alwaysApply: true
+---
+
+# Notebook build: run and verify
+
+When a plan includes building or implementing a Jupyter notebook, the task is **not complete** until all of the following are done.
+
+## 1. Execute the notebook
+
+- After implementing the notebook, **run it** (e.g. `jupyter nbconvert --execute --to notebook --inplace <path>` or equivalent).
+- Do not treat “notebook written” as done without at least one full run.
+
+## 2. Debug until it runs
+
+- If execution fails: fix the cause (syntax, imports, paths, APIs, data types), then **re-run**.
+- Repeat until the notebook runs from top to bottom with no execution errors.
+
+## 3. Verify outputs
+
+- Confirm that all outputs promised in the plan exist:
+  - Figures written to the agreed paths (e.g. `output/`).
+  - Tables/files (e.g. FITS, ECSV, summary) written to the agreed paths.
+- If the plan included “basic checks” or assertions, ensure they pass (or document why they don’t).
+
+## 4. Definition of done
+
+The user should be able to open the notebook and see executed cells, and open/inspect the generated output files. Consider the task complete only when that is true.

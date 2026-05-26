@@ -1,0 +1,26 @@
+---
+description: Confine all work, downloads, and outputs to the project directory
+alwaysApply: true
+---
+
+# Workspace confinement
+
+All work must stay under the project (workspace) root. Do not create, read, or edit files outside the workspace. Framework rules (e.g. NORMS, AI-AGENT-CONTRACT) also apply; for this project, path and directory constraints in this rule take precedence.
+
+## File paths
+
+- Only use paths under the workspace. No paths to home directory, `/tmp`, or other locations outside the project.
+- When suggesting or running file operations, use the workspace as the root.
+
+## Terminal commands
+
+- Run terminal commands with the workspace as the current working directory (project root).
+- If a command needs a specific working directory, use a path under the workspace (e.g. `output/`, `data/`).
+
+## Downloads and generated files
+
+- **downloads/** — Files fetched from the internet (wget, curl, browser downloads).
+- **data/** — Input data, datasets, catalogs.
+- **output/** — Plots, tables, exported results, logs.
+
+Use these subdirectories instead of home or `/tmp`. Create them on first use if they do not exist.
