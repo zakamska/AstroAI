@@ -31,7 +31,7 @@ Before adopting an AI coding agent for research, I cared about several things:
 
 No setup eliminates these risks entirely. The rules and commands in `.cursor/` address many of them **in part or in full**, especially when combined with a conservative workflow:
 
-- **Workspace confinement** — All agent activity stays inside the project directory you open as the workspace (no edits under your home folder, `/tmp`, etc.).
+- **Workspace confinement** — All agent activity stays inside the project directory you open as the workspace (no edits under your home folder, `/tmp`, etc.). Cursor keeps session metadata outside the workspace under `~/.cursor/projects/<workspace-slug>/` (terminal logs, chat transcripts, large tool spill files, etc.); that directory is Cursor infrastructure, not a place for scientific artifacts — research outputs still go in the project’s `downloads/`, `scripts/`, and `output/`.
 - **Directory layout ([NORMS](./.cursor/rules/NORMS.md))** — User-provided material lives in `data/`, `src/`, and `docs/`; the agent’s code and generated results go in `scripts/` and `output/`, with clear rules about not overwriting your files without permission.
 - **Agent contract ([AI-AGENT-CONTRACT](./.cursor/rules/AI-AGENT-CONTRACT.md))** — Handoffs, evidence, and artifact state (what is authoritative vs in progress).
 - **Notebook discipline** — Agent runs and verifies notebooks before calling work “done”; version numbers increase sequentially for each step so you can trace what produced what.
