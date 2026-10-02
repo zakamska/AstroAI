@@ -87,10 +87,12 @@ Use once the user has given the go-ahead.
   deliverables, and a stop condition. Don't jump ahead into future stages.
 - **Produce concrete artifacts** (files, plots, logs) rather than long
   arguments about what would happen.
-- **Write it up**: end each stage with a short summary document alongside the
-  outputs — what was done, what the numbers are, what is uncertain, and anything
-  found that was not expected, including mistakes and dead ends. Chat is not an
-  artifact; a file is.
+- **Write it up**: end each stage with a short HTML summary document in
+  `output/`, named with the task's `vNNN_` prefix (e.g.
+  `output/v003_summary.html`), with figures linked by relative path — what
+  was done, what the numbers are, what is uncertain, and anything found that
+  was not expected, including mistakes and dead ends. Chat is not an artifact;
+  a file is.
 - **Stop rule**: after delivering the requested artifacts for the current
   stage, stop and wait for confirmation before expanding scope.
 

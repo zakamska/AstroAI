@@ -15,7 +15,10 @@ Full rules are in `rules/`. Read them at the start of any session.
    `rules/code-version-naming.md` — update it when you take a number.
 5. **Verify outputs by looking at the numbers**, not by checking for a clean
    exit. Magnitudes, units, signs, array shapes. Report anything that looks off.
-6. **Write a summary `.md` after every step**, alongside the figures.
+6. **Write a summary `.html` after every step**, in `output/` alongside the
+   figures, with the task's `vNNN_` prefix (e.g. `output/v003_summary.html`).
+   One file that opens in any browser; link figures by relative path.
+   Handoffs stay Markdown.
 
 ## Environment
 

@@ -144,7 +144,7 @@ implementation only when you are happy with the approach.
 I found myself repeatedly asking,
 
 ```text
-After every step, please also write what you just told me as a .md file.
+After every step, please also write what you just told me as an .html file.
 ```
 
 Chat scrolls away and cannot be cited. A summary sitting in `output/` next to
@@ -152,7 +152,7 @@ the figures can. By the end of my project the summaries *were* the deliverable:
 they held the results, the caveats, the bugs found, the reasoning, and the open
 questions, in a form I could use in a draft. 
 
-The .md summaries are required by the rules now. I asked an AI agent for help in installing a Chrome App that reads .md files. 
+The summaries are required by the rules now, as `.html` files: they open in any browser with no extra software, and figures show up inline. Handoff documents stay Markdown, because they are written mainly for the next agent session to read. 
 
 ---
 
@@ -230,6 +230,6 @@ what to do next.
 5. **Plan first**, explicit go-ahead, and stop after delivering.
 6. **`vNNN_` naming** ties code in `scripts/` to results in `output/`.
 7. **Verify outputs by looking at the numbers**, not by checking for a clean exit.
-8. **A summary `.md` after every step.** Chat scrolls away; files do not.
+8. **A summary `.html` after every step.** Chat scrolls away; files do not.
 
 Enjoy — and adjust the workflow to match how conservative you want to be.
